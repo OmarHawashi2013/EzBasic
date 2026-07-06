@@ -12,7 +12,7 @@ int main() {
 		cout << "> ";
 
 		string ins;
-		cin >> ins;
+		getline(cin, ins);
 
 
 		for (int i = 0; i < ins.size(); i++) {
