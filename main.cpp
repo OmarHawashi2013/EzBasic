@@ -1,9 +1,9 @@
 #include <iostream>
-#include <sstream>
+#include <string>
 using namespace std;
 
 
-
+int mem[0xff];
 
 
 int main() {
@@ -11,25 +11,23 @@ int main() {
 	while (true) {
 		cout << "> ";
 
-		string ins;
-		getline(cin, ins);
+		string ins, op;
+		cin >> ins >> op;
 
 
-		for (int i = 0; i < ins.size(); i++) {
-			ins[i] = toupper(ins[i]);
+		if (ins == "PRINT") {
+			cout << op;
 		}
 
-		stringstream ss(ins);
+		else if (ins == "INPUT") {
+			int x;
+			cin >> x;
 
-		string word;
+			mem[stoi(op)] = x;
+		}
 
-
-		while (ss >> word) {
-			if (word == "PRINT") {
-				ss >> word;
-
-				cout << word << endl;
-			}
+		else if (ins == "GET") {
+			cout << mem[stoi(op)] << endl;
 		}
 	}
 
