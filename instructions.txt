@@ -1,14 +1,14 @@
-RUN
+RUN []
 
-STORE
-GET
+STORE [*]
+GET [*]
 
-PRINT
-INPUT
+PRINT [*]
+INPUT [*]
 
-NEW
-EXIT
-SAVE
+NEW []
+EXIT []
+SAVE []
 
 
 +
