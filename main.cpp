@@ -16,7 +16,7 @@ int main() {
 
 
 		if (ins == "PRINT") {
-			cout << op;
+			cout << op << endl;
 		}
 
 		else if (ins == "INPUT") {
@@ -28,6 +28,13 @@ int main() {
 
 		else if (ins == "GET") {
 			cout << mem[stoi(op)] << endl;
+		}
+		else if (ins == "STORE") {
+			int v;
+			cin >> v;
+
+
+			mem[stoi(op)] = v;
 		}
 	}
 
