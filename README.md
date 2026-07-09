@@ -12,7 +12,7 @@ EzBasic supports a core set of commands covering arithmetic, user interaction, a
 <ul>
 	<li><code>RUN</code>: Execute the currently written code.</li>
 	<li><code>SAVE</code>: Save the program or data state</li>
-	<li><code>EXIT</code>: Exit EzBasic.</li>
+	<li><code>EXIT</code>: Stop The Execution Of Your Code.</li>
 </ul>
 
 <h3>I/O Commands</h3>
