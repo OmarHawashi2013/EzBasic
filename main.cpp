@@ -1,9 +1,17 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
+
+struct command
+{
+	string ins;
+	string op;
+};
 
 
 int mem[0xff];
+vector<command> v;
 
 
 int main() {
@@ -14,28 +22,37 @@ int main() {
 		string ins, op;
 		cin >> ins >> op;
 
+		if (ins == "RUN") {
+			for (int i = 0; i < v.size(); i++) {
+				if (v[i].ins == "PRINT") {
+					cout << v[i].op << endl;
+				}
 
-		if (ins == "PRINT") {
-			cout << op << endl;
+				else if (v[i].ins == "INPUT") {
+					int x;
+					cin >> x;
+
+					mem[stoi(v[i].op)] = x;
+				}
+
+				else if (v[i].ins == "GET") {
+					cout << mem[stoi(v[i].op)] << endl;
+				}
+				else if (v[i].ins == "STORE") {
+					int x;
+					cin >> x;
+
+					mem[stoi(v[i].op)] = x;
+				}
+				else if (v[i].ins == "EXIT") {
+					return stoi(v[i].op);
+				}
+			}
+
+			return 0;
 		}
 
-		else if (ins == "INPUT") {
-			int x;
-			cin >> x;
-
-			mem[stoi(op)] = x;
-		}
-
-		else if (ins == "GET") {
-			cout << mem[stoi(op)] << endl;
-		}
-		else if (ins == "STORE") {
-			int v;
-			cin >> v;
-
-
-			mem[stoi(op)] = v;
-		}
+		v.push_back({ins, op});
 	}
 
 

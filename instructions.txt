@@ -1,4 +1,4 @@
-RUN []
+RUN [*]
 
 STORE [*]
 GET [*]
@@ -7,7 +7,7 @@ PRINT [*]
 INPUT [*]
 
 NEW []
-EXIT []
+EXIT [*]
 SAVE []
 
 
