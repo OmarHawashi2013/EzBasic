@@ -47,6 +47,14 @@ int main() {
 				else if (v[i].ins == "EXIT") {
 					return stoi(v[i].op);
 				}
+
+				else if (v[i].ins == "NEW") {
+					v.clear();
+
+					for (int i = 0; i < 0xff; i++) {
+						mem[i] = 0;
+					}
+				}
 			}
 
 			return 0;

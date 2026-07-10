@@ -9,6 +9,7 @@ INPUT [*]
 NEW []
 EXIT [*]
 SAVE []
+READ []
 
 
 +
