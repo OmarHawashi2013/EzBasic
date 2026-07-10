@@ -6,7 +6,7 @@ GET [*]
 PRINT [*]
 INPUT [*]
 
-NEW []
+NEW [*]
 EXIT [*]
 SAVE []
 READ []
