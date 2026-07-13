@@ -8,13 +8,6 @@ This project is currently in the Prototype stage, with ongoing development focus
 
 EzBasic supports a core set of commands covering arithmetic, user interaction, and memory control.
 
-<h3>System Commands</h3>
-<ul>
-	<li><code>RUN</code>: Execute the currently written code.</li>
-	<li><code>SAVE</code>: Save the program or data state</li>
-	<li><code>EXIT</code>: Stop The Execution Of Your Code.</li>
-</ul>
-
 <h3>I/O Commands</h3>
 <ul>
 	<li><code>PRINT</code>: Display data or results on the screen.</li>

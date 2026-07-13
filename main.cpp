@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 struct command
@@ -14,54 +15,61 @@ int mem[0xff];
 vector<command> v;
 
 
-int main() {
+int main(int argc, char *argv[]) {
 
-	while (true) {
-		cout << "> ";
+	ifstream file(argv[1]);
 
-		string ins, op;
-		cin >> ins >> op;
+	string word;
 
-		if (ins == "RUN") {
-			for (int i = 0; i < v.size(); i++) {
-				if (v[i].ins == "PRINT") {
-					cout << v[i].op << endl;
-				}
+	while (file >> word) {
+		command c;
+		c.ins = word;
 
-				else if (v[i].ins == "INPUT") {
-					int x;
-					cin >> x;
+		file >> word;
 
-					mem[stoi(v[i].op)] = x;
-				}
+		c.op = word;
 
-				else if (v[i].ins == "GET") {
-					cout << mem[stoi(v[i].op)] << endl;
-				}
-				else if (v[i].ins == "STORE") {
-					int x;
-					cin >> x;
+		v.push_back(c);
 
-					mem[stoi(v[i].op)] = x;
-				}
-				else if (v[i].ins == "EXIT") {
-					return stoi(v[i].op);
-				}
+	}
 
-				else if (v[i].ins == "NEW") {
-					v.clear();
-
-					for (int i = 0; i < 0xff; i++) {
-						mem[i] = 0;
-					}
-				}
-			}
-
-			return 0;
+	
+	for (int i = 0; i < v.size(); i++) {
+		if (v[i].ins == "PRINT") {
+			cout << v[i].op << endl;
 		}
 
-		v.push_back({ins, op});
+		else if (v[i].ins == "INPUT") {
+			int x;
+			cin >> x;
+
+			mem[stoi(v[i].op)] = x;
+		}
+
+		else if (v[i].ins == "GET") {
+			cout << mem[stoi(v[i].op)] << endl;
+		}
+		else if (v[i].ins == "STORE") {
+			int x;
+			cin >> x;
+
+			mem[stoi(v[i].op)] = x;
+		}
+		else if (v[i].ins == "EXIT") {
+			return stoi(v[i].op);
+		}
+
+		else if (v[i].ins == "NEW") {
+			v.clear();
+
+			for (int i = 0; i < 0xff; i++) {
+				mem[i] = 0;
+			}
+		}
 	}
+
+
+	file.close();
 
 
 
